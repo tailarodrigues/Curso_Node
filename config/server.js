@@ -10,7 +10,10 @@ var app = express();
 	app.set('views','./app/views');
 
 
-consign().include('app/routes').into(app);
+consign()
+.include('app/routes') //o consign me possibilita incluir mais rotas, lembrnado que preciso colocar a extensão do arquivo.
+.then('config/dbConnection.js')
+.into(app);
 
 
 module.exports = app;
