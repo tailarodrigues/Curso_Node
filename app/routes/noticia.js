@@ -4,11 +4,12 @@ module.exports = function(app){
 
 			//CONEXÃO COM O BD
 			var connection = app.config.dbConnection();
+			//acessando as models
+			var noticiasModel = app.app.models.noticiasModel;
 	
-				connection.query('SELECT * FROM noticias WHERE id_noticia = 2',function(error, result){
-
-					res.render("noticias/noticia", {noticia : result});
-		
+				noticiasModel.getNoticia(connection, function(error, result){
+					res.render("noticias/noticia", {noticia : result})
+						
 				});
 		});
 };
