@@ -12,14 +12,16 @@
 			<tr>
 				<td>ID</td>
 				<td>Titulo</td>
-				<td>Noticias</td>
+				<!-- foi retirado para que na pagina de noticia.js pudesse aparecer a noticia na integra 
+				<td>Noticias</td> -->
 			</tr>
 
 			<% for(var i=0; i < noticias.length; i++) { %>
 				<tr>
-					<TD><%= noticias[i].id %></TD>
+					<TD><%= noticias[i].id_noticia %></TD>
 					<td><%= noticias[i].titulo %></td>
-					<td><%= noticias[i].noticia %></td>
+					<!-- foi retirado para que na pagina de noticia.js pudesse aparecer a noticia na integra 
+					<td><%= noticias[i].noticia %></td>-->
 				</tr>
 			<% } %>
 
