@@ -2,8 +2,8 @@ var mysql = require('mysql');
 
 var connMySQL = function (){
 
-	//estrutura JASON para fazer a conexão com o banco de dados
-	console.log('Conexão com o BD estabelecida');
+	//estrutura JASON para fazer a conexão com o banco de dadosS
+		console.log('Conexao com BD estabelecida');
 		return  mysql.createConnection({
 			host : 'localhost', 
 			user : 'root',
@@ -13,7 +13,6 @@ var connMySQL = function (){
 
 };
 module.exports = function(app){
-	console.log('O AutoLoad carregou o modulo de conexão com o BD');
 	return connMySQL;
 
 

@@ -8,9 +8,9 @@ module.exports = function(app){
 		var noticias = req.body;
 
 		var connection = app.config.dbConnection();
-		var noticiasModel = app.app.models.noticiasModel;
+		var noticiasModel = new app.app.models.NoticiasDAO(connection);
 
-		noticiasModel.salvarNoticia(noticias, connection, function(error, result){
+		noticiasModel.salvarNoticia(noticias, function(error, result){
 			//redirect esta voltando a pagina para alguma pagina escolhida, evitando salvar mais de uma vez no BD
 			res.redirect('/noticias');
 			//este comando fazia o salvar dos dados

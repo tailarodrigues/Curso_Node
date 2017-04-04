@@ -5,9 +5,9 @@ module.exports = function(app){
 			//CONEXÃO COM O BD
 			var connection = app.config.dbConnection();
 			//acessando as models
-			var noticiasModel = app.app.models.noticiasModel;
+			var noticiasModel = new app.app.models.NoticiasDAO(connection);
 	
-				noticiasModel.getNoticia(connection, function(error, result){
+				noticiasModel.getNoticia( function(error, result){
 					res.render("noticias/noticia", {noticia : result})
 						
 				});
