@@ -1,7 +1,7 @@
 module.exports = function(app){
 
 	app.get('/formulario_inclusao_noticia', function(req, res){
-		res.render("admin/form_add_noticia", {validacao : {}});
+		res.render("admin/form_add_noticia", {validacao : {}, noticias:{}});
 	});
 
 	app.post('/noticias/salvar', function(req, res){
@@ -23,7 +23,7 @@ module.exports = function(app){
 		//Se não atender as requisições acima ele vai voltar para a tela inicial de cadastro
 		if (erros) {
 
-			res.render("admin/form_add_noticia", {validacao : erros});
+			res.render("admin/form_add_noticia", {validacao : erros, noticias : noticias});
 			return;
 		}
 
